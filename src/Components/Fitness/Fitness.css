@@ -31,3 +31,27 @@
 .btn-timer {
     margin: 10px;
 }
+
+.menu-timer {
+    border: 1px solid gainsboro;
+    background-color: beige;
+    height: 40px;
+    margin-left: 60px;
+    text-align: center;
+    align-items: center;
+}
+
+.menu-timer2 {
+    border: 1px solid gainsboro;
+    background-color: beige;
+    height: 40px;
+    margin-left: 60px;
+}
+
+.button {
+    height: 100%;
+    width: 100%;
+    border-radius: 15px;
+    background-color: blue;
+    color: white;
+}

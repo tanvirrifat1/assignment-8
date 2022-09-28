@@ -47,8 +47,21 @@ const Fitness = () => {
                         <button>40s</button>
                     </div>
                 </div>
+                <div>
+                    <h2>Exercise Details</h2>
+
+                    <h5 className='menu-timer'>Exercise time</h5>
+                    <h5 className='menu-timer2'>Break time</h5>
+
+                </div>
                 <p>time:{cart.length}</p>
+                <div >
+                    <button className='button'>
+                        <p>Complete</p>
+                    </button>
+                </div>
             </div>
+
         </div>
     );
 };
