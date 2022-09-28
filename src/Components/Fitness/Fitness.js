@@ -38,6 +38,15 @@ const Fitness = () => {
                         <h5>Age: 20</h5>
                     </div>
                 </div>
+                <div>
+                    <h2>Add A Break</h2>
+                    <div className='btn-timer'>
+                        <button>10s</button>
+                        <button>20s</button>
+                        <button>30s</button>
+                        <button>40s</button>
+                    </div>
+                </div>
                 <p>time:{cart.length}</p>
             </div>
         </div>
