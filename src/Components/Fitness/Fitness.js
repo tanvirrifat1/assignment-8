@@ -3,6 +3,7 @@ import Product from '../Product/Product';
 import './Fitness.css'
 const Fitness = () => {
     const [products, setProduct] = useState([])
+    const [cart, setCart] = useState([])
 
     useEffect(() => {
         fetch('data.json')
@@ -10,18 +11,34 @@ const Fitness = () => {
             .then(data => setProduct(data))
     }, [])
 
+    const handleClick = (product) => {
+        console.log(product)
+        const newCart = [...cart, product]
+        setCart(newCart)
+    }
+
     return (
         <div className='fitness-container'>
             <div className="product-container">
                 {
                     products.map(product => <Product
                         key={product.id}
+                        handleClick={handleClick}
                         product={product}
                     ></Product>)
                 }
             </div>
             <div className="cart-container">
-                <h4>About me</h4>
+                <div className='menu'>
+                    <h1>Tanvir Ahmed Rifat</h1>
+                    <p>Web-Developer</p>
+                    <div className='menu-info'>
+                        <h5>Weight: 57</h5>
+                        <h5>Height: 5.4</h5>
+                        <h5>Age: 20</h5>
+                    </div>
+                </div>
+                <p>time:{cart.length}</p>
             </div>
         </div>
     );
