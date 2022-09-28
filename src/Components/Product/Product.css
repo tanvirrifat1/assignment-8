@@ -1,0 +1,20 @@
+.img-container {
+    height: 200px;
+    width: 250px;
+}
+
+.pro-container {
+    width: 300px;
+    height: 400px;
+    border: 2px solid gainsboro;
+}
+
+
+.pro-container p {
+    margin-left: 10px;
+    align-items: flex-end;
+}
+
+.pro-name {
+    margin-right: 10px;
+}
