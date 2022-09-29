@@ -1,27 +1,21 @@
 import React, { useState } from 'react';
 import './Cart.css'
 import Swal from 'sweetalert2'
+import Break from './Break/Break';
 
 const Cart = ({ cart }) => {
-    const [breaks, setBreak] = useState([])
-
-
-
-    const handleClick = (id) => {
-        const newCart = [...breaks, id]
-        setBreak(newCart)
-    }
-
-
-    // let amount = 0;
-    // for (const pro of breaks) {
-    //     amount = amount + pro.breaks
-    // }
+    const [brkTime, setBreak] = useState(0)
 
     let total = 0
     for (const product of cart) {
         total = total + product.time
     }
+
+    const clicked = (breakTime) => {
+
+        setBreak(breakTime.btn)
+    }
+
     const handlerButton = () => {
         Swal.fire(
             'Good job!',
@@ -42,18 +36,13 @@ const Cart = ({ cart }) => {
             </div>
             <div>
                 <h2 className='break'>Add A Break</h2>
-                <div className='btn-timer'>
-                    <button onClick={handleClick}>10s</button>
-                    <button onClick={handleClick}>20s</button>
-                    <button onClick={handleClick}>30s</button>
-                    <button onClick={handleClick}>40s</button>
-                </div>
+                <Break clickedBtn={clicked}></Break>
             </div>
             <div>
                 <h2 className='details'>Exercise Details</h2>
 
                 <h5 className='menu-timer'>Exercise time : {total}</h5>
-                <h5 className='menu-timer2'>Break time :{breaks.length} </h5>
+                <h5 className='menu-timer2'>Break time : {brkTime}</h5>
 
             </div>
             <p></p>
