@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Cart.css'
+import { addToDb, savedGymCart } from '../../Ulities/Data'
 import Swal from 'sweetalert2'
 import Break from './Break/Break';
 
@@ -12,9 +13,11 @@ const Cart = ({ cart }) => {
     }
 
     const clicked = (breakTime) => {
-
+        addToDb(breakTime.btn)
         setBreak(breakTime.btn)
     }
+
+
 
     const handlerButton = () => {
         Swal.fire(
@@ -23,6 +26,14 @@ const Cart = ({ cart }) => {
             'success'
         )
     }
+
+
+    useEffect(() => {
+        const savedData = savedGymCart()
+        for (const key in savedData) {
+            setBreak(key)
+        }
+    }, []);
     return (
         <div>
             <div className='menu'>
