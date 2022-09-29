@@ -4,7 +4,7 @@ import Product from '../Product/Product';
 import './Fitness.css'
 const Fitness = () => {
     const [products, setProduct] = useState([])
-    const [cart, setCart] = useState([0])
+    const [cart, setCart] = useState([])
 
     useEffect(() => {
         fetch('data.json')
@@ -13,7 +13,7 @@ const Fitness = () => {
     }, [])
 
     const handleClick = (product) => {
-        console.log(product)
+        // console.log(product)
         const newCart = [...cart, product]
         setCart(newCart)
     }
@@ -30,7 +30,7 @@ const Fitness = () => {
                 }
             </div>
             <div className="cart-container">
-                <Cart></Cart>
+                <Cart cart={cart}></Cart>
             </div>
 
         </div>
