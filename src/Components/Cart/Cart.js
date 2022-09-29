@@ -5,6 +5,14 @@ import Swal from 'sweetalert2'
 const Cart = ({ cart }) => {
     const [breaks, setBreak] = useState([])
 
+
+
+    const handleClick = (product) => {
+        // console.log(product)
+        const newCart = [...breaks, product]
+        setBreak(newCart)
+    }
+
     let total = 0
     for (const product of cart) {
         total = total + product.time
@@ -30,7 +38,7 @@ const Cart = ({ cart }) => {
             <div>
                 <h2 className='break'>Add A Break</h2>
                 <div className='btn-timer'>
-                    <button>10s</button>
+                    <button onClick={handleClick}>10s</button>
                     <button>20s</button>
                     <button>30s</button>
                     <button>40s</button>
@@ -40,7 +48,7 @@ const Cart = ({ cart }) => {
                 <h2 className='details'>Exercise Details</h2>
 
                 <h5 className='menu-timer'>Exercise time : {total}</h5>
-                <h5 className='menu-timer2'>Break time :</h5>
+                <h5 className='menu-timer2'>Break time :{breaks.length} </h5>
 
             </div>
             <p></p>

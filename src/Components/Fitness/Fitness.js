@@ -40,8 +40,8 @@ const Fitness = () => {
                 <h4>question 2: what's the difference between props and state in react?</h4>
                 <h4>Ans: Props are used to pass data from one component to another. The state is a local data storage that is local to the component only and cannot be passed to other components. The this. setState property is used to update the state values in the component.</h4>
                 <br />
-                <h4>question 3: What else does it take to load useEffect data?</h4>
-                <h4>Ans: If we're using hooks in React function components, we can load data from an API when the component first loads by using the useEffect hook ...</h4>
+                <h4>question 3: use effect use without data load?</h4>
+                <h4>Ans: They let you use state and other React features without writing a class. The Effect Hook lets you perform side effects in function components:.</h4>
             </div>
         </div>
     );
