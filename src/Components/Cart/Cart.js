@@ -7,11 +7,16 @@ const Cart = ({ cart }) => {
 
 
 
-    const handleClick = (product) => {
-        // console.log(product)
-        const newCart = [...breaks, product]
+    const handleClick = (id) => {
+        const newCart = [...breaks, id]
         setBreak(newCart)
     }
+
+
+    // let amount = 0;
+    // for (const pro of breaks) {
+    //     amount = amount + pro.breaks
+    // }
 
     let total = 0
     for (const product of cart) {
@@ -39,9 +44,9 @@ const Cart = ({ cart }) => {
                 <h2 className='break'>Add A Break</h2>
                 <div className='btn-timer'>
                     <button onClick={handleClick}>10s</button>
-                    <button>20s</button>
-                    <button>30s</button>
-                    <button>40s</button>
+                    <button onClick={handleClick}>20s</button>
+                    <button onClick={handleClick}>30s</button>
+                    <button onClick={handleClick}>40s</button>
                 </div>
             </div>
             <div>
