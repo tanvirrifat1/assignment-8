@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import './Cart.css'
+import Swal from 'sweetalert2'
+
 const Cart = ({ cart }) => {
     const [breaks, setBreak] = useState([])
 
@@ -7,7 +9,13 @@ const Cart = ({ cart }) => {
     for (const product of cart) {
         total = total + product.time
     }
-
+    const handlerButton = () => {
+        Swal.fire(
+            'Good job!',
+            'You clicked the button!',
+            'success'
+        )
+    }
     return (
         <div>
             <div className='menu'>
@@ -37,7 +45,7 @@ const Cart = ({ cart }) => {
             </div>
             <p></p>
             <div >
-                <button className='button'>
+                <button onClick={handlerButton} className='button'>
                     <p>Complete</p>
                 </button>
             </div>
